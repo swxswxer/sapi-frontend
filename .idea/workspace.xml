@@ -11,7 +11,7 @@
       <change beforePath="$PROJECT_DIR$/config/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/defaultSettings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/defaultSettings.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/logo.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/.umi/core/defineApp.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi/core/defineApp.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/.umi/core/plugin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi/core/plugin.ts" afterDir="false" />
@@ -39,6 +39,7 @@
       <change beforePath="$PROJECT_DIR$/src/oldapp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldapp.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Admin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Admin/InterfaceInfo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin/InterfaceInfo/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Index/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Index/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/TableList/components/UpdateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TableList/components/UpdateForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/TableList/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TableList/index.tsx" afterDir="false" />
@@ -164,7 +165,7 @@
       <workItem from="1723570765682" duration="5108000" />
       <workItem from="1723634658941" duration="8225000" />
       <workItem from="1723650268051" duration="7143000" />
-      <workItem from="1723720314414" duration="22475000" />
+      <workItem from="1723720314414" duration="22888000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
