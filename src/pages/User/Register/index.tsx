@@ -1,16 +1,17 @@
 import {Footer} from '@/components';
-import {userLoginUsingPost} from '@/services/sapi-backend/userController';
+import {userLoginUsingPost, userRegisterUsingPost} from '@/services/sapi-backend/userController';
 import {
   LockOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 import {LoginForm, ProFormCheckbox, ProFormText} from '@ant-design/pro-components';
-import {Helmet, history, Link, useModel} from '@umijs/max';
+import {Helmet, history, useModel} from '@umijs/max';
 import {message, Tabs} from 'antd';
 import {createStyles} from 'antd-style';
 import React, {useState} from 'react';
 import {flushSync} from 'react-dom';
 import Settings from '../../../../config/defaultSettings';
+import {Link} from "@@/exports";
 
 const useStyles = createStyles(({token}) => {
   return {
@@ -53,47 +54,45 @@ const Login: React.FC = () => {
   const [type, setType] = useState<string>('account');
   const {initialState, setInitialState} = useModel('@@initialState');
   const {styles} = useStyles();
-  const fetchUserInfo = async () => {
-    const userInfo = await initialState?.fetchUserInfo?.();
-    if (userInfo) {
-      flushSync(() => {
-        setInitialState((s) => ({
-          ...s,
-          currentUser: userInfo,
-        }));
-      });
-    }
-  };
-  const handleSubmit = async (values: API.UserLoginRequest) => {
+  // const fetchUserInfo = async () => {
+  //   const userInfo = await initialState?.fetchUserInfo?.();
+  //   if (userInfo) {
+  //     flushSync(() => {
+  //       setInitialState((s) => ({
+  //         ...s,
+  //         currentUser: userInfo,
+  //       }));
+  //     });
+  //   }
+  // };
+  const handleSubmit = async (values: API.UserRegisterRequest) => {
     try {
       // 登录
-      const res = await userLoginUsingPost({
+      const res = await userRegisterUsingPost({
         ...values,
       });
       if (res.data) {
-        const defaultLoginSuccessMessage = '登录成功！';
-        message.success(defaultLoginSuccessMessage);
-        await fetchUserInfo();
-        const urlParams = new URL(window.location.href).searchParams;
-        history.push(urlParams.get('redirect') || '/');
+        // const defaultLoginSuccessMessage = '登录成功！';
+        message.success("注册成功");
+        history.push( '/user/login');
         return;
       } else {
         message.error(res.message);
       }
       // history.push('/');
-      // @ts-ignore
-      setUserLoginState(res.data);
     } catch (error) {
-      const defaultLoginFailureMessage = '登录失败，请重试！';
+      const defaultLoginFailureMessage = '注册失败，请重试！';
       console.log(error);
       message.error(defaultLoginFailureMessage);
     }
   };
+  // @ts-ignore
   return (
+
     <div className={styles.container}>
       <Helmet>
         <title>
-          {'登录'}- {Settings.title}
+          {'注册'}- {Settings.title}
         </title>
       </Helmet>
       <div
@@ -103,10 +102,18 @@ const Login: React.FC = () => {
         }}
       >
         <LoginForm
+
+
           contentStyle={{
             minWidth: 280,
             maxWidth: '75vw',
           }}
+          submitter={{
+            searchConfig: {
+              submitText: '注册',
+            }
+          }}
+
           title="SAPI 接口一站通"
           subTitle={'SAPI是专注简化开发者开发流程的平台'}
           initialValues={{
@@ -124,7 +131,7 @@ const Login: React.FC = () => {
             items={[
               {
                 key: 'account',
-                label: '账户密码登录',
+                label: '注册',
               },
             ]}
           />
@@ -159,26 +166,37 @@ const Login: React.FC = () => {
                   },
                 ]}
               />
+              <ProFormText.Password
+                name="checkPassword"
+                fieldProps={{
+                  size: 'large',
+                  prefix: <LockOutlined/>,
+                }}
+                placeholder={'请确认密码'}
+                rules={[
+                  {
+                    required: true,
+                    message: '密码是必填项！',
+                  },
+                ]}
+              />
+
             </>
           )}
 
-          <div
-            style={{
-              marginBottom: 24,
-            }}
-          >
-            <ProFormCheckbox noStyle name="autoLogin">
-              自动登录
-            </ProFormCheckbox>
+          <div>
             <Link
-              to="/user/register"
+              to="/user/login"
               style={{
                 float: 'right',
+                marginBottom: '13px', // 这里增加了底部的外边距
               }}
             >
-              前往注册
+              已经有账号？ 前往登录
             </Link>
           </div>
+
+
         </LoginForm>
       </div>
       <Footer/>

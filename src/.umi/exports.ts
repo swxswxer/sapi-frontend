@@ -6,7 +6,6 @@ export { defineApp } from './core/defineApp'
 export type { RuntimeConfig } from './core/defineApp'
 // plugins
 export { Access, useAccess, useAccessMarkedRoutes } from '/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/src/.umi/plugin-access';
-export { addLocale, setLocale, getLocale, getIntl, useIntl, injectIntl, formatMessage, FormattedMessage, getAllLocales, FormattedDate, FormattedDateParts, FormattedDisplayName, FormattedHTMLMessage, FormattedList, FormattedNumber, FormattedNumberParts, FormattedPlural, FormattedRelativeTime, FormattedTime, FormattedTimeParts, IntlProvider, RawIntlProvider, SelectLang } from '/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/src/.umi/plugin-locale';
 export { Provider, useModel } from '/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/src/.umi/plugin-model';
 export { useRequest, UseRequestProvider, request, getRequestInstance } from '/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/src/.umi/plugin-request';
 // plugins types.d.ts

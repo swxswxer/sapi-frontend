@@ -1,9 +1,22 @@
 import { listInterfaceInfoByPageUsingGet } from '@/services/sapi-backend/interfaceInfoController';
-import { PageContainer } from '@ant-design/pro-components';
-import { message } from 'antd';
+import { ProList } from '@ant-design/pro-components';
+import { message, Tag } from 'antd';
 import React, { useEffect, useState } from 'react';
-import ProCard from "@ant-design/pro-card";
-import {useNavigate} from "@umijs/max";
+import { useNavigate } from '@umijs/max';
+import {BarChartOutlined, LikeOutlined} from '@ant-design/icons';
+import { getTotalNumByIdUsingGet } from "@/services/sapi-backend/analysisController";
+
+interface IconTextProps {
+  icon: React.FC;
+  text: string | number;
+}
+
+const IconText: React.FC<IconTextProps> = ({ icon, text }) => (
+  <span>
+    {React.createElement(icon, { style: { marginRight: 8 } })}
+    {text}
+  </span>
+);
 
 /**
  * 主页
@@ -12,8 +25,10 @@ import {useNavigate} from "@umijs/max";
 const Index: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [list, setList] = useState<API.InterfaceInfo[]>([]);
-  const [total, setTotal] = useState<number>(0);
-  const navigate = useNavigate(); // 初始化 navigate
+  const [totals, setTotals] = useState<{ [key: number]: number }>({});
+  const [ghost] = useState<boolean>(false);
+  const navigate = useNavigate();
+
   const loadData = async (current = 1, pageSize = 5) => {
     setLoading(true);
     try {
@@ -21,8 +36,19 @@ const Index: React.FC = () => {
         current,
         pageSize,
       });
-      setList(res?.data?.records ?? []);
-      setTotal(res?.data?.total ?? 0);
+      const data = res?.data?.records ?? [];
+      setList(data);
+      const totalPromises = data.map(async (item) => {
+        const totalRes = await getTotalNumByIdUsingGet({ interfaceInfoId: item.id });
+        return { id: item.id, total: totalRes ?? 0 };
+      });
+      const totalsArray = await Promise.all(totalPromises);
+      const totalsMap = totalsArray.reduce((acc, item) => {
+        // @ts-ignore
+        acc[item.id] = item.total;
+        return acc;
+      }, {} as { [key: number]: number });
+      setTotals(totalsMap);
     } catch (error: any) {
       message.error('请求失败，' + error.message);
     }
@@ -37,41 +63,96 @@ const Index: React.FC = () => {
     navigate(`/interface_info/${id}`);
   };
 
+  const getMethodTagColor = (method: string | undefined) => {
+    switch (method?.toUpperCase()) {
+      case 'GET':
+        return 'green';
+      case 'POST':
+        return 'blue';
+      case 'PUT':
+        return 'orange';
+      case 'DELETE':
+        return 'red';
+      default:
+        return 'gray';
+    }
+  };
+
   return (
-    <PageContainer title="在线接口开放平台">
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
+    <div
+      style={{
+        backgroundColor: '#eee',
+        margin: -24,
+        padding: 24,
+      }}
+    >
+      <ProList<API.InterfaceInfo>
+        loading={loading}
+        ghost={ghost}
+        itemCardProps={{
+          ghost,
         }}
-      >
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 180px)', // 一行显示4个卡片
-            gap: '100px', // 卡片间距
-            padding: '50px', // 整体内边距
-            justifyContent: 'center', // 中心对齐内容
-          }}
-        >
-          {list.map((item) => (
-            <ProCard
-              key={item.id}
-              style={{ height: '220px', width: '180px' }}
-              hoverable
-              bordered
-              onClick={() => handleCardClick(item.id)}
-              title={item.description}
-            >
-              <div>接口名称</div>
-              <div>{item.name}</div>
-              <div>请求方式</div>
-              <div>{item.method}</div>
-            </ProCard>
-          ))}
-        </div>
-      </div>
-    </PageContainer>
+        pagination={{
+          defaultPageSize: 8,
+          showSizeChanger: false,
+        }}
+        showActions="hover"
+        rowSelection={{}}
+        grid={{ gutter: 16, column: 4 }}
+        onItem={(record: API.InterfaceInfo) => {
+          return {
+            onMouseEnter: () => {
+              console.log(record);
+            },
+            onClick: () => {
+              handleCardClick(record.id);
+            },
+          };
+        }}
+        metas={{
+          title: {
+            dataIndex: 'name',
+            title: '接口名称',
+          },
+          subTitle: {
+            render: (_, record) => (
+              <Tag color={getMethodTagColor(record.method)}>
+                {record.method}
+              </Tag>
+            ),
+          },
+          type: {
+            dataIndex: 'method',
+            title: '请求方式',
+          },
+          avatar: {
+            render: () => (
+              <img
+                src="https://gw.alipayobjects.com/zos/antfincdn/UCSiy1j6jx/xingzhuang.svg"
+                alt="avatar"
+                style={{ width: 30, height: 30 }}
+              />
+            ),
+          },
+          content: {
+            dataIndex: 'description',
+            title: '描述',
+            render: (text: string) => <div>{text}</div>,
+          },
+          actions: {
+            render: (_, record) => [
+              <IconText
+                icon={BarChartOutlined}
+                text={totals[record.id] || 0}
+                key="list-vertical-like-o"
+              />,
+            ],
+          },
+        }}
+        headerTitle="接口广场"
+        dataSource={list}
+      />
+    </div>
   );
 };
 

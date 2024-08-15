@@ -115,6 +115,11 @@ declare namespace API {
     id?: number;
   };
 
+  type getTotalNumByIdUsingGETParams = {
+    /** interfaceInfoId */
+    interfaceInfoId?: number;
+  };
+
   type getUserByIdUsingGETParams = {
     /** id */
     id?: number;

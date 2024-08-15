@@ -289,7 +289,7 @@ const TableList: React.FC = () => {
     },
   ];
   return (
-      <PageContainer>
+<div>
         <ProTable<API.RuleListItem, API.PageParams>
           headerTitle={'查询表格'}
           actionRef={actionRef}
@@ -423,8 +423,8 @@ const TableList: React.FC = () => {
           }}
           visible={createModalOpen}
         />
-      </PageContainer>
 
+</div>
   );
 };
 export default TableList;

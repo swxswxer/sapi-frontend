@@ -15,10 +15,11 @@ const Settings: ProLayoutProps & {
   fixedHeader: true,
   fixSiderbar: true,
   colorWeak: false,
-  title: 'SAPI',
+  title: '接口一站通',
   pwa: true,
-  logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+  logo: '/logo-sapi.svg',
   iconfontUrl: '',
+
 
 
   menu: {
