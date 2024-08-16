@@ -5,50 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1583f763-7579-48c5-8bef-dc83ee0e8e46" name="更改" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/public/logo-sapi.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/User/Register/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Admin/interfaceInfoPro/components/CreateModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Admin/interfaceInfoPro/components/UpdateModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Admin/interfaceInfoPro/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/defaultSettings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/defaultSettings.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi/core/defineApp.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi/core/defineApp.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi/core/plugin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi/core/plugin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.umi-production/core/defineApp.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi-production/core/defineApp.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.umi-production/core/plugin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi-production/core/plugin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.umi-production/core/route.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi-production/core/route.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.umi-production/exports.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi-production/exports.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-layout/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi-production/plugin-layout/Layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-layout/rightRender.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi-production/plugin-layout/rightRender.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-locale/SelectLang.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-locale/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-locale/locale.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-locale/localeExports.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-locale/runtime.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-locale/runtimeConfig.d.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/.umi/core/route.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi/core/route.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi/exports.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi/exports.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi/plugin-layout/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi/plugin-layout/Layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi/plugin-layout/rightRender.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi/plugin-layout/rightRender.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi/plugin-locale/SelectLang.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi/plugin-locale/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi/plugin-locale/locale.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi/plugin-locale/localeExports.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi/plugin-locale/runtime.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi/plugin-locale/runtimeConfig.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi/plugin-openapi/openapi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi/plugin-openapi/openapi.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi/requestRecordMock.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi/startMock.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/access.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/access.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RightContent/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RightContent/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/global.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/global.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/zh-CN/pages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/zh-CN/pages.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oldapp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldapp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Admin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Admin/InterfaceInfo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin/InterfaceInfo/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Admin/InterfaceInfo/components/CreateModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin/InterfaceInfo/components/CreateModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Admin/InterfaceInfo/components/UpdateModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin/InterfaceInfo/components/UpdateModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Index/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Index/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TableList/components/UpdateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TableList/components/UpdateForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TableList/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TableList/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/User/Login/__snapshots__/login.test.tsx.snap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/User/Login/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/User/Login/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/User/Login/login.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/requestErrorConfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/requestErrorConfig.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sapi-backend/analysisController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sapi-backend/analysisController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/InterfaceInfo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/InterfaceInfo/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/sapi-backend/basicErrorController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sapi-backend/basicErrorController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/sapi-backend/interfaceInfoController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sapi-backend/interfaceInfoController.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/sapi-backend/typings.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sapi-backend/typings.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,48 +47,50 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/src/pages/User&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.deploy.executor&quot;: &quot;Run&quot;,
-    &quot;npm.gh-pages.executor&quot;: &quot;Run&quot;,
-    &quot;npm.i18n-remove.executor&quot;: &quot;Run&quot;,
-    &quot;npm.openapi.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ssh.settings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/src/pages/Admin/interfaceInfoPro",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "npm.deploy.executor": "Run",
+    "npm.gh-pages.executor": "Run",
+    "npm.i18n-remove.executor": "Run",
+    "npm.openapi.executor": "Run",
+    "npm.start.executor": "Run",
+    "settings.editor.selected.configurable": "ssh.settings",
+    "ts.external.directory.path": "/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/Admin/interfaceInfoPro" />
       <recent name="$PROJECT_DIR$/src/pages/User" />
       <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
-    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.openapi">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="deploy" />
+        <script value="build" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="gh-pages" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="gh-pages" />
+        <script value="deploy" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -146,11 +128,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.openapi" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.i18n-remove" />
         <item itemvalue="npm.deploy" />
-        <item itemvalue="npm.gh-pages" />
       </list>
     </recent_temporary>
   </component>
@@ -165,7 +147,9 @@
       <workItem from="1723570765682" duration="5108000" />
       <workItem from="1723634658941" duration="8225000" />
       <workItem from="1723650268051" duration="7143000" />
-      <workItem from="1723720314414" duration="22888000" />
+      <workItem from="1723720314414" duration="24920000" />
+      <workItem from="1723791238394" duration="7000" />
+      <workItem from="1723791255479" duration="24441000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />

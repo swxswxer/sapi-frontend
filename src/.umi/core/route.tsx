@@ -15,7 +15,7 @@ export async function getRoutes() {
 '5': React.lazy(() => import(/* webpackChunkName: "p__User__Login__index" */'@/pages/User/Login/index.tsx')),
 '6': React.lazy(() => import(/* webpackChunkName: "p__User__Register__index" */'@/pages/User/Register/index.tsx')),
 '7': React.lazy(() => import('./EmptyRoute')),
-'8': React.lazy(() => import(/* webpackChunkName: "p__Admin__InterfaceInfo__index" */'@/pages/Admin/InterfaceInfo/index.tsx')),
+'8': React.lazy(() => import(/* webpackChunkName: "p__Admin__interfaceInfoPro__index" */'@/pages/Admin/interfaceInfoPro/index.tsx')),
 '9': React.lazy(() => import(/* webpackChunkName: "p__Admin__InterfaceAnalysis__index" */'@/pages/Admin/InterfaceAnalysis/index.tsx')),
 '10': React.lazy(() => import(/* webpackChunkName: "p__404" */'@/pages/404.tsx')),
 'ant-design-pro-layout': React.lazy(() => import(/* webpackChunkName: "umi__plugin-layout__Layout" */'/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/src/.umi/plugin-layout/Layout.tsx')),

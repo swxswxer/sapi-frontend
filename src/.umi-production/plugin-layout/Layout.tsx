@@ -18,7 +18,7 @@ import Exception from './Exception';
 import { getRightRenderContent } from './rightRender';
 import { useModel } from '@@/plugin-model';
 import { useAccessMarkedRoutes } from '@@/plugin-access';
-import { useIntl } from '@@/plugin-locale';
+
 
 // 过滤出需要显示的路由, 这里的filterFn 指 不希望显示的层级
 const filterRoutes = (routes: IRoute[], filterFn: (route: IRoute) => boolean) => {
@@ -88,16 +88,16 @@ export default (props: any) => {
   "fixedHeader": true,
   "fixSiderbar": true,
   "colorWeak": false,
-  "title": "SAPI",
+  "title": "接口一站通",
   "pwa": true,
-  "logo": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg",
+  "logo": "/logo-sapi.svg",
   "iconfontUrl": "",
   "menu": {
     "locale": false
   },
   "token": {}
 };
-const { formatMessage } = useIntl();
+const formatMessage = undefined;
   const runtimeConfig = pluginManager.applyPlugins({
     key: 'layout',
     type: 'modify',

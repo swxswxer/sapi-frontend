@@ -17,6 +17,14 @@ export async function addInterfaceInfoUsingPost(
   });
 }
 
+/** getCount GET /api/interfaceInfo/count */
+export async function getCountUsingGet(options?: { [key: string]: any }) {
+  return request<API.BaseResponseint>('/api/interfaceInfo/count', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
 /** deleteInterfaceInfo POST /api/interfaceInfo/delete */
 export async function deleteInterfaceInfoUsingPost(
   body: API.DeleteRequest,

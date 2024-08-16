@@ -1,10 +1,13 @@
-import { listInterfaceInfoByPageUsingGet } from '@/services/sapi-backend/interfaceInfoController';
+import { getTotalNumByIdUsingGet } from '@/services/sapi-backend/analysisController';
+import {
+  getCountUsingGet,
+  listInterfaceInfoByPageUsingGet,
+} from '@/services/sapi-backend/interfaceInfoController';
+import { BarChartOutlined } from '@ant-design/icons';
 import { ProList } from '@ant-design/pro-components';
+import { useNavigate } from '@umijs/max';
 import { message, Tag } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from '@umijs/max';
-import {BarChartOutlined, LikeOutlined} from '@ant-design/icons';
-import { getTotalNumByIdUsingGet } from "@/services/sapi-backend/analysisController";
 
 interface IconTextProps {
   icon: React.FC;
@@ -18,18 +21,25 @@ const IconText: React.FC<IconTextProps> = ({ icon, text }) => (
   </span>
 );
 
-/**
- * 主页
- * @constructor
- */
 const Index: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [list, setList] = useState<API.InterfaceInfo[]>([]);
   const [totals, setTotals] = useState<{ [key: number]: number }>({});
-  const [ghost] = useState<boolean>(false);
+  const [totalItems, setTotalItems] = useState<number>(0); // 用于存储总条数
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const navigate = useNavigate();
 
-  const loadData = async (current = 1, pageSize = 5) => {
+  // 获取总条数
+  const fetchTotalCount = async () => {
+    try {
+      const res = await getCountUsingGet();
+      setTotalItems(res?.data || 0);
+    } catch (error: any) {
+      message.error('获取总条数失败，' + error.message);
+    }
+  };
+
+  const loadData = async (current = 1, pageSize = 8) => {
     setLoading(true);
     try {
       const res = await listInterfaceInfoByPageUsingGet({
@@ -44,7 +54,6 @@ const Index: React.FC = () => {
       });
       const totalsArray = await Promise.all(totalPromises);
       const totalsMap = totalsArray.reduce((acc, item) => {
-        // @ts-ignore
         acc[item.id] = item.total;
         return acc;
       }, {} as { [key: number]: number });
@@ -56,8 +65,13 @@ const Index: React.FC = () => {
   };
 
   useEffect(() => {
-    loadData();
-  }, []);
+    fetchTotalCount(); // 获取总条数
+    loadData(currentPage);
+  }, [currentPage]);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
 
   const handleCardClick = (id: number | undefined) => {
     navigate(`/interface_info/${id}`);
@@ -88,13 +102,15 @@ const Index: React.FC = () => {
     >
       <ProList<API.InterfaceInfo>
         loading={loading}
-        ghost={ghost}
         itemCardProps={{
-          ghost,
+          ghost: false,
         }}
         pagination={{
-          defaultPageSize: 8,
+          total: totalItems, // 设置总条数
+          pageSize: 8,
+          current: currentPage,
           showSizeChanger: false,
+          onChange: handlePageChange, // 页码切换时触发的函数
         }}
         showActions="hover"
         rowSelection={{}}
@@ -117,7 +133,7 @@ const Index: React.FC = () => {
           subTitle: {
             render: (_, record) => (
               <Tag color={getMethodTagColor(record.method)}>
-                {record.method}
+                {record.status === 0 ? '未上线' : record.method}
               </Tag>
             ),
           },

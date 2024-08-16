@@ -6,18 +6,17 @@ import React, { useEffect, useRef } from 'react';
 
 export type Props = {
   values: API.InterfaceInfo;
-  mainColumns: ProColumns<API.InterfaceInfo>[];
-  nestedColumns: ProColumns<API.InterfaceInfo>[];
+  columns: ProColumns<API.InterfaceInfo>[];
   onCancel: () => void;
   onSubmit: (values: API.InterfaceInfo) => Promise<void>;
   visible: boolean;
 };
 
 const UpdateModal: React.FC<Props> = (props) => {
-  const { values, visible, mainColumns, nestedColumns, onCancel, onSubmit } = props;
+  const { values, visible, columns, onCancel, onSubmit } = props;
 
   const formRef = useRef<ProFormInstance>();
-  const combinedColumns = [...mainColumns, ...nestedColumns];
+
   useEffect(() => {
     if (formRef) {
       formRef.current?.setFieldsValue(values);
@@ -25,16 +24,11 @@ const UpdateModal: React.FC<Props> = (props) => {
   }, [values]);
 
   return (
-    <Modal
-      visible={visible}
-      footer={null}
-      onCancel={onCancel}
-      centered // 使弹窗居中显示
-    >
+    <Modal visible={visible} footer={null} onCancel={() => onCancel?.()}>
       <ProTable
         type="form"
         formRef={formRef}
-        columns={combinedColumns}
+        columns={columns}
         onSubmit={async (value) => {
           onSubmit?.(value);
         }}

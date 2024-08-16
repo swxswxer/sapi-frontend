@@ -1,11 +1,11 @@
-import { PageContainer } from '@ant-design/pro-components';
-import React, { useEffect, useState } from 'react';
-import {Button, Card, Descriptions, Form, message, Input, Spin, Divider} from 'antd';
 import {
-  getInterfaceInfoByIdUsingGet, invokeInterfaceInfoUsingPost,
-  // invokeInterfaceInfoUsingPost,
+  getInterfaceInfoByIdUsingGet,
+  invokeInterfaceInfoUsingPost,
 } from '@/services/sapi-backend/interfaceInfoController';
 import { useParams } from '@@/exports';
+import { PageContainer } from '@ant-design/pro-components';
+import { Button, Card, Descriptions, Divider, Form, Input, message, Tag } from 'antd';
+import React, { useEffect, useState } from 'react';
 
 /**
  * 主页
@@ -16,7 +16,7 @@ const Index: React.FC = () => {
   const [data, setData] = useState<API.InterfaceInfo>();
   const [invokeRes, setInvokeRes] = useState<any>();
   const [invokeLoading, setInvokeLoading] = useState(false);
-
+  const [form] = Form.useForm();
   const params = useParams();
 
   const loadData = async () => {
@@ -30,6 +30,9 @@ const Index: React.FC = () => {
         id: Number(params.id),
       });
       setData(res.data);
+      form.setFieldsValue({
+        userRequestParams: res.data?.requestParams,
+      });
     } catch (error: any) {
       message.error('请求失败，' + error.message);
     }
@@ -51,24 +54,49 @@ const Index: React.FC = () => {
         id: params.id,
         ...values,
       });
-      setInvokeRes(res.data);
-      message.success('请求成功');
+      if (!res.data || res.code === 40000) {
+        message.error('操作失败，' + res.message);
+        setInvokeLoading(false);
+        return;
+      }
+      if (res.code === 0) {
+        setInvokeRes(res.data);
+        message.success('请求成功');
+      }
     } catch (error: any) {
       message.error('操作失败，' + error.message);
     }
     setInvokeLoading(false);
   };
+  const getMethodTagColor = (method: string | undefined) => {
+    switch (method?.toUpperCase()) {
+      case 'GET':
+        return 'green';
+      case 'POST':
+        return 'blue';
+      case 'PUT':
+        return 'orange';
+      case 'DELETE':
+        return 'red';
+      default:
+        return 'gray';
+    }
+  };
 
   return (
-    <PageContainer title="查看接口文档" contentWidth={"Fluid"}>
-      <Card >
+    <PageContainer title="查看接口文档" contentWidth={'Fluid'}>
+      <Card>
         {data ? (
-          <Descriptions title={data.name} column={1} >
+          <Descriptions title={data.name} column={1}>
             <Descriptions.Item label="接口状态">{data.status ? '开启' : '关闭'}</Descriptions.Item>
             <Descriptions.Item label="描述">{data.description}</Descriptions.Item>
             <Descriptions.Item label="请求地址">{data.url}</Descriptions.Item>
-            <Descriptions.Item label="请求方法">{data.method}</Descriptions.Item>
-            <Descriptions.Item label="请求参数">{data.requestParams}</Descriptions.Item>
+            <Descriptions.Item label="请求方法">
+              <Tag color={getMethodTagColor(data.method)}>{data.method}</Tag>
+            </Descriptions.Item>
+            <Descriptions.Item label="请求参数">
+              {data?.requestParams ? data.requestParams : '无'}
+            </Descriptions.Item>
             <Descriptions.Item label="请求头">{data.requestHeader}</Descriptions.Item>
             <Descriptions.Item label="响应头">{data.responseHeader}</Descriptions.Item>
             <Descriptions.Item label="创建时间">{data.createTime}</Descriptions.Item>
@@ -80,9 +108,11 @@ const Index: React.FC = () => {
       </Card>
       <Divider />
       <Card title="在线测试">
-        <Form name="invoke" layout="vertical" onFinish={onFinish}>
+        <Form form={form} name="invoke" layout="vertical" onFinish={onFinish}>
+          {' '}
+          {/* <-- 修改3 */}
           <Form.Item label="请求参数" name="userRequestParams">
-            <Input.TextArea />
+            <Input.TextArea disabled={!data?.requestParams} />
           </Form.Item>
           <Form.Item wrapperCol={{ span: 16 }}>
             <Button type="primary" htmlType="submit">

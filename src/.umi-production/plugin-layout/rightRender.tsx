@@ -4,7 +4,6 @@
 import React from 'react';
 import { Avatar, version, Dropdown, Menu, Spin } from 'antd';
 import { LogoutOutlined } from '/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/node_modules/@ant-design/icons';
-import { SelectLang } from '@@/plugin-locale';
 
 export function getRightRenderContent (opts: {
    runtimeConfig: any,
@@ -52,6 +51,7 @@ export function getRightRenderContent (opts: {
   }
 
   // 如果没有打开Locale，并且头像为空就取消掉这个返回的内容
+    if(!avatar) return null;
 
   const langMenu = {
     className: "umi-plugin-layout-menu",
@@ -102,7 +102,6 @@ export function getRightRenderContent (opts: {
       ) : (
         avatar
       )}
-      <SelectLang />
     </div>
   );
 }
