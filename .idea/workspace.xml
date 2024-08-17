@@ -4,37 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1583f763-7579-48c5-8bef-dc83ee0e8e46" name="更改" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/src/pages/Admin/interfaceInfoPro/components/CreateModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Admin/interfaceInfoPro/components/UpdateModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Admin/interfaceInfoPro/index.tsx" afterDir="false" />
+    <list default="true" id="1583f763-7579-48c5-8bef-dc83ee0e8e46" name="更改" comment="美化UI 修改Index页面 修改InterfaceInfo页面">
+      <change afterPath="$PROJECT_DIR$/src/components/RightContent/components/CreateModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User/UserInfo/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.husky/commit-msg" beforeDir="false" afterPath="$PROJECT_DIR$/.husky/commit-msg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi-production/core/defineApp.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi-production/core/defineApp.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi-production/core/plugin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi-production/core/plugin.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi-production/core/route.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi-production/core/route.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi-production/exports.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi-production/exports.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-layout/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi-production/plugin-layout/Layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-layout/rightRender.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi-production/plugin-layout/rightRender.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-locale/SelectLang.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-locale/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-locale/locale.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-locale/localeExports.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-locale/runtime.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.umi-production/plugin-locale/runtimeConfig.d.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/.umi/core/route.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/.umi/core/route.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Admin/InterfaceInfo/components/CreateModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin/InterfaceInfo/components/CreateModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Admin/InterfaceInfo/components/UpdateModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin/InterfaceInfo/components/UpdateModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Index/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Index/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RightContent/AvatarDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RightContent/AvatarDropdown.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/InterfaceInfo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/InterfaceInfo/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/sapi-backend/basicErrorController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sapi-backend/basicErrorController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/sapi-backend/interfaceInfoController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sapi-backend/interfaceInfoController.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/sapi-backend/typings.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sapi-backend/typings.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/sapi-backend/userController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sapi-backend/userController.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,7 +45,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/src/pages/Admin/interfaceInfoPro",
+    "last_opened_file_path": "/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/src/pages/User/UserInfo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -70,9 +64,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/User/UserInfo" />
+      <recent name="$PROJECT_DIR$/src/components/RightContent/components" />
+      <recent name="$PROJECT_DIR$/src/components/RightContent" />
       <recent name="$PROJECT_DIR$/src/pages/Admin/interfaceInfoPro" />
       <recent name="$PROJECT_DIR$/src/pages/User" />
-      <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
   <component name="RunManager" selected="npm.openapi">
@@ -129,8 +125,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.openapi" />
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.i18n-remove" />
         <item itemvalue="npm.deploy" />
       </list>
@@ -149,7 +145,8 @@
       <workItem from="1723650268051" duration="7143000" />
       <workItem from="1723720314414" duration="24920000" />
       <workItem from="1723791238394" duration="7000" />
-      <workItem from="1723791255479" duration="24441000" />
+      <workItem from="1723791255479" duration="27193000" />
+      <workItem from="1723885847498" duration="13070000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -175,6 +172,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="美化UI 修改Index页面 修改InterfaceInfo页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="美化UI 修改Index页面 修改InterfaceInfo页面" />
   </component>
 </project>

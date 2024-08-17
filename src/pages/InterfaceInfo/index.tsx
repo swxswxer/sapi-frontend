@@ -2,22 +2,36 @@ import {
   getInterfaceInfoByIdUsingGet,
   invokeInterfaceInfoUsingPost,
 } from '@/services/sapi-backend/interfaceInfoController';
+import { getInterfaceLeftNumByInterfaceIdUsingGet } from '@/services/sapi-backend/userController';
 import { useParams } from '@@/exports';
 import { PageContainer } from '@ant-design/pro-components';
-import { Button, Card, Descriptions, Divider, Form, Input, message, Tag } from 'antd';
+import {
+  Button,
+  Card,
+  Checkbox,
+  Descriptions,
+  Divider,
+  Form,
+  Input,
+  message,
+  Modal,
+  Tag,
+  Typography,
+} from 'antd';
 import React, { useEffect, useState } from 'react';
 
-/**
- * 主页
- * @constructor
- */
+const { Text } = Typography;
+
 const Index: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<API.InterfaceInfo>();
   const [invokeRes, setInvokeRes] = useState<any>();
   const [invokeLoading, setInvokeLoading] = useState(false);
+  const [remainingCalls, setRemainingCalls] = useState<number>(0);
   const [form] = Form.useForm();
   const params = useParams();
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [doNotShowAgain, setDoNotShowAgain] = useState(false);
 
   const loadData = async () => {
     if (!params.id) {
@@ -33,6 +47,12 @@ const Index: React.FC = () => {
       form.setFieldsValue({
         userRequestParams: res.data?.requestParams,
       });
+
+      // 获取接口剩余调用次数
+      const totalRes = await getInterfaceLeftNumByInterfaceIdUsingGet({
+        interfaceInfoId: Number(params.id),
+      });
+      setRemainingCalls(totalRes.data);
     } catch (error: any) {
       message.error('请求失败，' + error.message);
     }
@@ -41,7 +61,19 @@ const Index: React.FC = () => {
 
   useEffect(() => {
     loadData();
+
+    const doNotShow = localStorage.getItem('doNotShowModal');
+    if (!doNotShow) {
+      setIsModalVisible(true);
+    }
   }, []);
+
+  const handleOk = () => {
+    if (doNotShowAgain) {
+      localStorage.setItem('doNotShowModal', 'true');
+    }
+    setIsModalVisible(false);
+  };
 
   const onFinish = async (values: any) => {
     if (!params.id) {
@@ -62,12 +94,19 @@ const Index: React.FC = () => {
       if (res.code === 0) {
         setInvokeRes(res.data);
         message.success('请求成功');
+
+        // 调用成功后刷新剩余调用次数
+        const totalRes = await getInterfaceLeftNumByInterfaceIdUsingGet({
+          interfaceInfoId: Number(params.id),
+        });
+        setRemainingCalls(totalRes.data);
       }
     } catch (error: any) {
       message.error('操作失败，' + error.message);
     }
     setInvokeLoading(false);
   };
+
   const getMethodTagColor = (method: string | undefined) => {
     switch (method?.toUpperCase()) {
       case 'GET':
@@ -84,7 +123,28 @@ const Index: React.FC = () => {
   };
 
   return (
-    <PageContainer title="查看接口文档" contentWidth={'Fluid'}>
+    <PageContainer title="查看接口文档">
+      <Modal
+        title="温馨提示"
+        visible={isModalVisible}
+        onOk={handleOk}
+        cancelButtonProps={{ style: { display: 'none' } }}
+        footer={[
+          <Checkbox
+            onChange={(e) => setDoNotShowAgain(e.target.checked)}
+            style={{ marginRight: 'auto' }}
+          >
+            不再提示
+          </Checkbox>,
+          <Button key="submit" type="primary" onClick={handleOk}>
+            我已知悉
+          </Button>,
+        ]}
+      >
+        <p>平台为每位新用户提供每个接口50次的调用额度</p>
+        <p>如果额度用完,请期待平台后续更新（会以签到的形式给予用户额度）</p>
+        <p style={{ color: 'red' }}>请注意！在线调试与SDK调用都会消耗接口额度！</p>
+      </Modal>
       <Card>
         {data ? (
           <Descriptions title={data.name} column={1}>
@@ -109,13 +169,13 @@ const Index: React.FC = () => {
       <Divider />
       <Card title="在线测试">
         <Form form={form} name="invoke" layout="vertical" onFinish={onFinish}>
-          {' '}
-          {/* <-- 修改3 */}
           <Form.Item label="请求参数" name="userRequestParams">
             <Input.TextArea disabled={!data?.requestParams} />
           </Form.Item>
+          {/* 在输入框下面和按钮上面显示提示信息 */}
+          <Text type="secondary">接口剩余调用次数：{remainingCalls}</Text>
           <Form.Item wrapperCol={{ span: 16 }}>
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" loading={invokeLoading}>
               调用
             </Button>
           </Form.Item>

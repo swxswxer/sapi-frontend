@@ -52,6 +52,36 @@ export async function getLoginUserUsingGet(options?: { [key: string]: any }) {
   });
 }
 
+/** getAKSK GET /api/user/getAksk */
+export async function getAkskUsingGet(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.getAKSKUsingGETParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseAkSkVO>('/api/user/getAksk', {
+    method: 'GET',
+    params: {
+      ...params,
+    },
+    ...(options || {}),
+  });
+}
+
+/** getInterfaceLeftNumByInterfaceId GET /api/user/getInterfaceLeftNum */
+export async function getInterfaceLeftNumByInterfaceIdUsingGet(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.getInterfaceLeftNumByInterfaceIdUsingGETParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseint>('/api/user/getInterfaceLeftNum', {
+    method: 'GET',
+    params: {
+      ...params,
+    },
+    ...(options || {}),
+  });
+}
+
 /** listUser GET /api/user/list */
 export async function listUserUsingGet(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)

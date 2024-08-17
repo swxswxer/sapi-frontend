@@ -1,4 +1,15 @@
 declare namespace API {
+  type AkSkVO = {
+    accessKey?: string;
+    secretKey?: string;
+  };
+
+  type BaseResponseAkSkVO = {
+    code?: number;
+    data?: AkSkVO;
+    message?: string;
+  };
+
   type BaseResponseboolean = {
     code?: number;
     data?: boolean;
@@ -111,9 +122,19 @@ declare namespace API {
     id?: number;
   };
 
+  type getAKSKUsingGETParams = {
+    /** userPassword */
+    userPassword?: string;
+  };
+
   type getInterfaceInfoByIdUsingGETParams = {
     /** id */
     id?: number;
+  };
+
+  type getInterfaceLeftNumByInterfaceIdUsingGETParams = {
+    /** interfaceInfoId */
+    interfaceInfoId?: number;
   };
 
   type getPostByIdUsingGETParams = {

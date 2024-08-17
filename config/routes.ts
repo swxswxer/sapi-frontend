@@ -2,6 +2,13 @@ export default [
   { path: '/', name: '主页', icon: 'smile', component: './Welcome' },
   { path: '/interface', name: '接口广场', icon: 'smile', component: './Index' },
   {
+    path: '/user/userInfo',
+    name: '个人信息',
+    hideInMenu: true,
+    icon: 'smile',
+    component: './User/UserInfo',
+  },
+  {
     path: '/interface_info/:id',
     name: '查看接口',
     icon: 'smile',
