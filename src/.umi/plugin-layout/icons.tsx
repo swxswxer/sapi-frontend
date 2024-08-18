@@ -4,4 +4,5 @@
 import SmileOutlined from '/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/node_modules/@ant-design/icons/es/icons/SmileOutlined';
 import CrownOutlined from '/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/node_modules/@ant-design/icons/es/icons/CrownOutlined';
 import TableOutlined from '/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/node_modules/@ant-design/icons/es/icons/TableOutlined';
-export default { SmileOutlined, CrownOutlined, TableOutlined };
+import GithubOutlined from '/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/node_modules/@ant-design/icons/es/icons/GithubOutlined';
+export default { SmileOutlined, CrownOutlined, TableOutlined, GithubOutlined };

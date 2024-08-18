@@ -4,7 +4,7 @@
 import React from 'react';
 
 export async function getRoutes() {
-  const routes = {"1":{"path":"/","name":"主页","icon":"smile","parentId":"ant-design-pro-layout","id":"1"},"2":{"path":"/interface","name":"接口广场","icon":"smile","parentId":"ant-design-pro-layout","id":"2"},"3":{"path":"/user/userInfo","name":"个人信息","hideInMenu":true,"icon":"smile","parentId":"ant-design-pro-layout","id":"3"},"4":{"path":"/interface_info/:id","name":"查看接口","icon":"smile","hideInMenu":true,"parentId":"ant-design-pro-layout","id":"4"},"5":{"path":"/user","layout":false,"id":"5"},"6":{"name":"登录","path":"/user/login","parentId":"5","id":"6"},"7":{"name":"注册","path":"/user/register","parentId":"5","id":"7"},"8":{"path":"/admin","name":"管理页","icon":"crown","access":"canAdmin","parentId":"ant-design-pro-layout","id":"8"},"9":{"name":"接口管理","icon":"table","path":"/admin/interface_info","layout":{"contentWidth":"Fixed"},"parentId":"8","id":"9"},"10":{"name":"接口分析","icon":"analysis","path":"/admin/interface_analysis","parentId":"8","id":"10"},"11":{"path":"*","layout":false,"id":"11"},"ant-design-pro-layout":{"id":"ant-design-pro-layout","path":"/","isLayout":true},"umi/plugin/openapi":{"path":"/umi/plugin/openapi","id":"umi/plugin/openapi"}} as const;
+  const routes = {"1":{"path":"/","name":"主页","icon":"smile","parentId":"ant-design-pro-layout","id":"1"},"2":{"path":"/interface","name":"接口广场","icon":"smile","parentId":"ant-design-pro-layout","id":"2"},"3":{"path":"/user/userInfo","name":"个人信息","hideInMenu":true,"icon":"smile","parentId":"ant-design-pro-layout","id":"3"},"4":{"path":"/interface_info/:id","name":"查看接口","icon":"smile","hideInMenu":true,"parentId":"ant-design-pro-layout","id":"4"},"5":{"path":"/user","layout":false,"id":"5"},"6":{"name":"登录","path":"/user/login","parentId":"5","id":"6"},"7":{"name":"注册","path":"/user/register","parentId":"5","id":"7"},"8":{"path":"/admin","name":"管理页","icon":"crown","access":"canAdmin","parentId":"ant-design-pro-layout","id":"8"},"9":{"name":"接口管理","icon":"table","path":"/admin/interface_info","layout":{"contentWidth":"Fixed"},"parentId":"8","id":"9"},"10":{"name":"接口分析","icon":"analysis","path":"/admin/interface_analysis","parentId":"8","id":"10"},"11":{"path":"https://github.com/swxswxer/sapi-client-sdk","name":"使用指南","icon":"GithubOutlined","parentId":"ant-design-pro-layout","id":"11"},"12":{"path":"*","layout":false,"id":"12"},"ant-design-pro-layout":{"id":"ant-design-pro-layout","path":"/","isLayout":true},"umi/plugin/openapi":{"path":"/umi/plugin/openapi","id":"umi/plugin/openapi"}} as const;
   return {
     routes,
     routeComponents: {
@@ -18,7 +18,8 @@ export async function getRoutes() {
 '8': React.lazy(() => import('./EmptyRoute')),
 '9': React.lazy(() => import(/* webpackChunkName: "p__Admin__interfaceInfoPro__index" */'@/pages/Admin/interfaceInfoPro/index.tsx')),
 '10': React.lazy(() => import(/* webpackChunkName: "p__Admin__InterfaceAnalysis__index" */'@/pages/Admin/InterfaceAnalysis/index.tsx')),
-'11': React.lazy(() => import(/* webpackChunkName: "p__404" */'@/pages/404.tsx')),
+'11': React.lazy(() => import('./EmptyRoute')),
+'12': React.lazy(() => import(/* webpackChunkName: "p__404" */'@/pages/404.tsx')),
 'ant-design-pro-layout': React.lazy(() => import(/* webpackChunkName: "umi__plugin-layout__Layout" */'/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/src/.umi/plugin-layout/Layout.tsx')),
 'umi/plugin/openapi': React.lazy(() => import(/* webpackChunkName: "umi__plugin-openapi__openapi" */'/Users/yanghaoxin/Desktop/项目/SAPI/sapi-frontend/src/.umi/plugin-openapi/openapi.tsx')),
 },

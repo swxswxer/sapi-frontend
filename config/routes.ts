@@ -49,6 +49,12 @@ export default [
     ],
   },
 
+  {
+    path: 'https://github.com/swxswxer/sapi-client-sdk',
+    name: '使用指南',
+    icon: 'GithubOutlined',
+  },
+
   // { path: '/', redirect: '/welcome' },
   { path: '*', layout: false, component: './404' },
 ];
